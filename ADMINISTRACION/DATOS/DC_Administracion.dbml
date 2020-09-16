@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Administracion" Class="DC_AdminDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=VALE\VALEVALERIA;Initial Catalog=Administracion;Integrated Security=True" SettingsObjectName="WindowsApplication1.My.MySettings" SettingsPropertyName="AdministracionConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.CLIENTES" Member="CLIENTES">
+    <Type Name="CLIENTES">
+      <Column Name="ID_CLIENTE" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CLI_NOMBRES" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="CLI_APELLIDO" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="CLI_DNI" Type="System.String" DbType="Char(8) NOT NULL" CanBeNull="false" />
+      <Column Name="CLI_DIRECCION" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CLI_LOCALIDAD" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="CLI_TEL_1" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="CLI_TEL_2" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="CLI_MAIL" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CLI_TIPO" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="CLI_CONTRATO" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="CLI_FECHA_ALTA" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Association Name="CLIENTES_SERVICIOS" Member="SERVICIOS" ThisKey="ID_CLIENTE" OtherKey="ID_CLIENTE" Type="SERVICIOS" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VENTAS" Member="VENTAS">
+    <Type Name="VENTAS">
+      <Column Name="ID_VENTA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="VENT_FECHA" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="VENT_SUBTOTAL" Type="System.Decimal" DbType="Decimal(7,2) NOT NULL" CanBeNull="false" />
+      <Column Name="VENT_TOTAL" Type="System.Decimal" DbType="Decimal(7,2) NOT NULL" CanBeNull="false" />
+      <Column Name="VENT_CANTIDAD" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_FORM_DE_PAGO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_CLIENTE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="VENTAS_PROD_X_VTA" Member="PROD_X_VTA" ThisKey="ID_VENTA" OtherKey="ID_VENTA" Type="PROD_X_VTA" />
+      <Association Name="FORMAS_DE_PAGO_VENTAS" Member="FORMAS_DE_PAGO" ThisKey="ID_FORM_DE_PAGO" OtherKey="ID_FORM_DE_PAGO" Type="FORMAS_DE_PAGO" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DEPOSITOS" Member="DEPOSITOS">
+    <Type Name="DEPOSITOS">
+      <Column Name="ID_DEPOSITO" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DEPO_NOMBRE" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DEPO_DIRECCION" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="DEPO_LOCALIDAD" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DEPO_CODIGO" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Association Name="DEPOSITOS_PRODUCTOS" Member="PRODUCTOS" ThisKey="ID_DEPOSITO" OtherKey="ID_DEPOSITO" Type="PRODUCTOS" />
+    </Type>
+  </Table>
+  <Table Name="dbo.EQUIPOS_X_SERVICIOS" Member="EQUIPOS_X_SERVICIOS">
+    <Type Name="EQUIPOS_X_SERVICIOS">
+      <Column Name="ID_EQUI_X_SERV" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ID_PRODUCTO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EXS_CANTIDAD" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EXS_FECHA_INSTALACION" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="ID_SERVICIO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="PRODUCTOS_EQUIPOS_X_SERVICIOS" Member="PRODUCTOS" ThisKey="ID_PRODUCTO" OtherKey="ID_PRODUCTO" Type="PRODUCTOS" IsForeignKey="true" />
+      <Association Name="SERVICIOS_EQUIPOS_X_SERVICIOS" Member="SERVICIOS" ThisKey="ID_SERVICIO" OtherKey="ID_SERVICIO" Type="SERVICIOS" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.FORMAS_DE_PAGO" Member="FORMAS_DE_PAGO">
+    <Type Name="FORMAS_DE_PAGO">
+      <Column Name="ID_FORM_DE_PAGO" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FDP_DESCRIPCION" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Association Name="FORMAS_DE_PAGO_VENTAS" Member="VENTAS" ThisKey="ID_FORM_DE_PAGO" OtherKey="ID_FORM_DE_PAGO" Type="VENTAS" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PROD_X_VTA" Member="PROD_X_VTA">
+    <Type Name="PROD_X_VTA">
+      <Column Name="ID_PROD_X_VTA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ID_PRODUCTO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_VENTA" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PXV_CANTIDAD" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PXV_PRECIO_X_PRODUCTO" Type="System.Decimal" DbType="Decimal(7,2) NOT NULL" CanBeNull="false" />
+      <Association Name="VENTAS_PROD_X_VTA" Member="VENTAS" ThisKey="ID_VENTA" OtherKey="ID_VENTA" Type="VENTAS" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="PRODUCTOS_PROD_X_VTA" Member="PRODUCTOS" ThisKey="ID_PRODUCTO" OtherKey="ID_PRODUCTO" Type="PRODUCTOS" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PRODUCTOS" Member="PRODUCTOS">
+    <Type Name="PRODUCTOS">
+      <Column Name="ID_PRODUCTO" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PROD_CODIGO" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="PROD_DESCRIPCION" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="PROD_PRECIO_COSTO" Type="System.Decimal" DbType="Decimal(7,2) NOT NULL" CanBeNull="false" />
+      <Column Name="PROD_PRECIO_VTA" Type="System.Decimal" DbType="Decimal(7,2) NOT NULL" CanBeNull="false" />
+      <Column Name="PROD_STOCK" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_PROVEEDOR" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_DEPOSITO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_PROD_TIPO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="PRODUCTOS_EQUIPOS_X_SERVICIOS" Member="EQUIPOS_X_SERVICIOS" ThisKey="ID_PRODUCTO" OtherKey="ID_PRODUCTO" Type="EQUIPOS_X_SERVICIOS" />
+      <Association Name="PRODUCTOS_PROD_X_VTA" Member="PROD_X_VTA" ThisKey="ID_PRODUCTO" OtherKey="ID_PRODUCTO" Type="PROD_X_VTA" />
+      <Association Name="DEPOSITOS_PRODUCTOS" Member="DEPOSITOS" ThisKey="ID_DEPOSITO" OtherKey="ID_DEPOSITO" Type="DEPOSITOS" IsForeignKey="true" />
+      <Association Name="PRODUCTOS_TIPOS_PRODUCTOS" Member="PRODUCTOS_TIPOS" ThisKey="ID_PROD_TIPO" OtherKey="ID_PROD_TIPO" Type="PRODUCTOS_TIPOS" IsForeignKey="true" />
+      <Association Name="PROVEEDORES_PRODUCTOS" Member="PROVEEDORES" ThisKey="ID_PROVEEDOR" OtherKey="ID_PROVEEDOR" Type="PROVEEDORES" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PRODUCTOS_TIPOS" Member="PRODUCTOS_TIPOS">
+    <Type Name="PRODUCTOS_TIPOS">
+      <Column Name="ID_PROD_TIPO" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PROD_TIPO_DESC" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="PROD_TIPO_CODIGO" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Association Name="PRODUCTOS_TIPOS_PRODUCTOS" Member="PRODUCTOS" ThisKey="ID_PROD_TIPO" OtherKey="ID_PROD_TIPO" Type="PRODUCTOS" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PROVEEDORES" Member="PROVEEDORES">
+    <Type Name="PROVEEDORES">
+      <Column Name="ID_PROVEEDOR" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PROV_NOMBRE" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PROV_DIRECCION" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="PROV_TEL_1" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="PROV_TEL_2" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="PROV_MAIL" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PROV_URL" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="PROV_LOCALIDAD" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PROV_CODIGO" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Association Name="PROVEEDORES_PRODUCTOS" Member="PRODUCTOS" ThisKey="ID_PROVEEDOR" OtherKey="ID_PROVEEDOR" Type="PRODUCTOS" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SERVICIOS" Member="SERVICIOS">
+    <Type Name="SERVICIOS">
+      <Column Name="ID_SERVICIO" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ID_CLIENTE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SERV_DIRECCION" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SERV_LOCALIDAD" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SERV_TEL_1" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="SERV_TEL_2" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="SERV_TEL_3" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="SERV_DESCRIPCION" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Association Name="SERVICIOS_EQUIPOS_X_SERVICIOS" Member="EQUIPOS_X_SERVICIOS" ThisKey="ID_SERVICIO" OtherKey="ID_SERVICIO" Type="EQUIPOS_X_SERVICIOS" />
+      <Association Name="CLIENTES_SERVICIOS" Member="CLIENTES" ThisKey="ID_CLIENTE" OtherKey="ID_CLIENTE" Type="CLIENTES" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.USUARIOS" Member="USUARIOS">
+    <Type Name="USUARIOS">
+      <Column Name="ID_USUARIO" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="USU_USUARIO" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="USU_CONTRASEÑA" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="USU_PERFIL" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>

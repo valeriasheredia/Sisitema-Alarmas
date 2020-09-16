@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Administracion" Class="DC_Administracion_Reportes" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=VALE\VALEVALERIA;Initial Catalog=Administracion;Integrated Security=True" SettingsObjectName="WindowsApplication1.My.MySettings" SettingsPropertyName="AdministracionConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.Proc_Ventas_Id" Method="Proc_Ventas_Id">
+    <Parameter Name="id_venta" Type="System.Int32" DbType="Int" />
+    <ElementType Name="Proc_Ventas_IdResult">
+      <Column Name="ID_PROD_X_VTA" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_PRODUCTO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_VENTA" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PXV_CANTIDAD" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PXV_PRECIO_X_PRODUCTO" Type="System.Decimal" DbType="Decimal(7,2) NOT NULL" CanBeNull="false" />
+      <Column Name="ID_VENTA1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="VENT_FECHA" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="VENT_SUBTOTAL" Type="System.Decimal" DbType="Decimal(7,2) NOT NULL" CanBeNull="false" />
+      <Column Name="VENT_TOTAL" Type="System.Decimal" DbType="Decimal(7,2) NOT NULL" CanBeNull="false" />
+      <Column Name="VENT_CANTIDAD" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_FORM_DE_PAGO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_CLIENTE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ID_CLIENTE1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CLI_NOMBRES" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="CLI_APELLIDO" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="CLI_DNI" Type="System.String" DbType="Char(8) NOT NULL" CanBeNull="false" />
+      <Column Name="CLI_DIRECCION" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CLI_LOCALIDAD" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="CLI_TEL_1" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="CLI_TEL_2" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="CLI_MAIL" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CLI_TIPO" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="CLI_CONTRATO" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="CLI_FECHA_ALTA" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ID_PRODUCTO1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PROD_CODIGO" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="PROD_DESCRIPCION" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="PROD_PRECIO_COSTO" Type="System.Decimal" DbType="Decimal(7,2) NOT NULL" CanBeNull="false" />
+      <Column Name="PROD_PRECIO_VTA" Type="System.Decimal" DbType="Decimal(7,2) NOT NULL" CanBeNull="false" />
+      <Column Name="PROD_STOCK" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_PROVEEDOR" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_DEPOSITO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_PROD_TIPO" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID_FORM_DE_PAGO1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FDP_DESCRIPCION" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+</Database>
