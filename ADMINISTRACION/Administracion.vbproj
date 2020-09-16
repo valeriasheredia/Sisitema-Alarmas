@@ -1,0 +1,496 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7CA84B3E-DC59-40AF-85CA-7B1AD8D933A4}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>WindowsApplication1.FRM_INGRESO</StartupObject>
+    <RootNamespace>WindowsApplication1</RootNamespace>
+    <AssemblyName>Administracion</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>D:\Programas\Administracion\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <AutorunEnabled>true</AutorunEnabled>
+    <ApplicationRevision>4</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>Administracion.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>Administracion.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>C630D6A738A454E8CD15D03568E6E0F49A278F8D</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>Administracion_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportAppServer.Controllers, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DATOS\DC_Administracion.designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DC_Administracion.dbml</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="DATOS\DC_Administracion_Reportes.designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DC_Administracion_Reportes.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="DATOS\DC_Administracion_Reportes.vb">
+      <DependentUpon>DC_Administracion_Reportes.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="DATOS\TipoFormulario.vb" />
+    <Compile Include="FORMULARIOS\Form1.Designer.vb">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMULARIOS\Form1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMULARIOS\FRM_CLIENTES_BUSCAR_B_M.Designer.vb">
+      <DependentUpon>FRM_CLIENTES_BUSCAR_B_M.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMULARIOS\FRM_CLIENTES_BUSCAR_B_M.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMULARIOS\FRM_AGREGAR_PROD_A_VENT.Designer.vb">
+      <DependentUpon>FRM_AGREGAR_PROD_A_VENT.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMULARIOS\FRM_AGREGAR_PROD_A_VENT.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMULARIOS\FRM_DEPOSITOS_BUSCAR_B_M.Designer.vb">
+      <DependentUpon>FRM_DEPOSITOS_BUSCAR_B_M.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMULARIOS\FRM_DEPOSITOS_BUSCAR_B_M.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMULARIOS\FRM_FORMAS_DE_PAGO_BUSCAR_B_M.Designer.vb">
+      <DependentUpon>FRM_FORMAS_DE_PAGO_BUSCAR_B_M.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMULARIOS\FRM_FORMAS_DE_PAGO_BUSCAR_B_M.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMULARIOS\FRM_GESTION_USUARIOS_B.Designer.vb">
+      <DependentUpon>FRM_GESTION_USUARIOS_B.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMULARIOS\FRM_GESTION_USUARIOS_B.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMULARIOS\FRM_GESTION_USUSARIOS.Designer.vb">
+      <DependentUpon>FRM_GESTION_USUSARIOS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMULARIOS\FRM_GESTION_USUSARIOS.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMULARIOS\FRM_INGRESO.Designer.vb">
+      <DependentUpon>FRM_INGRESO.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMULARIOS\FRM_INGRESO.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMULARIOS\FRM_MENU.Designer.vb">
+      <DependentUpon>FRM_MENU.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMULARIOS\FRM_MENU.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMULARIOS\FRM_OBTENER_CADENA.Designer.vb">
+      <DependentUpon>FRM_OBTENER_CADENA.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMULARIOS\FRM_OBTENER_CADENA.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMULARIOS\FRM_PRODUCTOS_BUSCAR_B_M.Designer.vb">
+      <DependentUpon>FRM_PRODUCTOS_BUSCAR_B_M.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMULARIOS\FRM_PRODUCTOS_BUSCAR_B_M.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMULARIOS\FRM_PROVEEDORES_BUSCAR_B_M.Designer.vb">
+      <DependentUpon>FRM_PROVEEDORES_BUSCAR_B_M.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMULARIOS\FRM_PROVEEDORES_BUSCAR_B_M.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMULARIOS\FRM_TIPOS_PRODUCTOS.Designer.vb">
+      <DependentUpon>FRM_TIPOS_PRODUCTOS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMULARIOS\FRM_TIPOS_PRODUCTOS.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMULARIOS\FRM_FORMAS_DE_PAGO.Designer.vb">
+      <DependentUpon>FRM_FORMAS_DE_PAGO.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMULARIOS\FRM_FORMAS_DE_PAGO.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMULARIOS\FRM_CLIENTES_A_M.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMULARIOS\FRM_CLIENTES_A_M.Designer.vb">
+      <DependentUpon>FRM_CLIENTES_A_M.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMULARIOS\FRM_DEPOSITOS.Designer.vb">
+      <DependentUpon>FRM_DEPOSITOS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMULARIOS\FRM_DEPOSITOS.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMULARIOS\FRM_PRODUCTOS.Designer.vb">
+      <DependentUpon>FRM_PRODUCTOS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMULARIOS\FRM_PRODUCTOS.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMULARIOS\FRM_PROVEEDORES.Designer.vb">
+      <DependentUpon>FRM_PROVEEDORES.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMULARIOS\FRM_PROVEEDORES.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMULARIOS\FRM_SERVICIOS.Designer.vb">
+      <DependentUpon>FRM_SERVICIOS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMULARIOS\FRM_SERVICIOS.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMULARIOS\FRM_TIPOS_PRODUCTOS_BUSCAR_B_M.Designer.vb">
+      <DependentUpon>FRM_TIPOS_PRODUCTOS_BUSCAR_B_M.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMULARIOS\FRM_TIPOS_PRODUCTOS_BUSCAR_B_M.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMULARIOS\FRM_VALOR_DOLAR_PESO_B_M.Designer.vb">
+      <DependentUpon>FRM_VALOR_DOLAR_PESO_B_M.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMULARIOS\FRM_VALOR_DOLAR_PESO_B_M.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMULARIOS\FRM_VENTAS.Designer.vb">
+      <DependentUpon>FRM_VENTAS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMULARIOS\FRM_VENTAS.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMULARIOS\FRM_VENTAS_BUSCAR_M_B.Designer.vb">
+      <DependentUpon>FRM_VENTAS_BUSCAR_M_B.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FORMULARIOS\FRM_VENTAS_BUSCAR_M_B.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMULARIOS\IvaResult.vb" />
+    <Compile Include="Installer1.Designer.vb">
+      <DependentUpon>Installer1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Installer1.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="REPORTES\CR_Listado_Clientes.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CR_Listado_Clientes.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="REPORTES\FRM_HISTORIAL_VENTAS.Designer.vb">
+      <DependentUpon>FRM_HISTORIAL_VENTAS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="REPORTES\FRM_HISTORIAL_VENTAS.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="REPORTES\FRM_LISTADO_CLIENTES.Designer.vb">
+      <DependentUpon>FRM_LISTADO_CLIENTES.vb</DependentUpon>
+    </Compile>
+    <Compile Include="REPORTES\FRM_LISTADO_CLIENTES.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="REPORTES\FRM_REPORTE_VENTA.Designer.vb">
+      <DependentUpon>FRM_REPORTE_VENTA.vb</DependentUpon>
+    </Compile>
+    <Compile Include="REPORTES\FRM_REPORTE_VENTA.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="REPORTES\Reporte_Historial_Ventas.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reporte_Historial_Ventas.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="REPORTES\Reporte_Venta.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reporte_Venta.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DATOS\DC_Administracion_Reportes.dbml.layout">
+      <DependentUpon>DC_Administracion_Reportes.dbml</DependentUpon>
+    </None>
+    <EmbeddedResource Include="REPORTES\FRM_HISTORIAL_VENTAS.resx">
+      <DependentUpon>FRM_HISTORIAL_VENTAS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\FRM_LISTADO_CLIENTES.resx">
+      <DependentUpon>FRM_LISTADO_CLIENTES.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMULARIOS\FRM_VALOR_DOLAR_PESO_B_M.resx">
+      <DependentUpon>FRM_VALOR_DOLAR_PESO_B_M.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\CR_Listado_Clientes.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CR_Listado_Clientes.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\FRM_REPORTE_VENTA.resx">
+      <DependentUpon>FRM_REPORTE_VENTA.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\Reporte_Historial_Ventas.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Reporte_Historial_Ventas.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTES\Reporte_Venta.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Reporte_Venta.vb</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Administracion_TemporaryKey.pfx" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="DATOS\DC_Administracion.dbml.layout">
+      <DependentUpon>DC_Administracion.dbml</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <EmbeddedResource Include="FORMULARIOS\Form1.resx">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMULARIOS\FRM_CLIENTES_BUSCAR_B_M.resx">
+      <DependentUpon>FRM_CLIENTES_BUSCAR_B_M.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMULARIOS\FRM_AGREGAR_PROD_A_VENT.resx">
+      <DependentUpon>FRM_AGREGAR_PROD_A_VENT.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMULARIOS\FRM_DEPOSITOS_BUSCAR_B_M.resx">
+      <DependentUpon>FRM_DEPOSITOS_BUSCAR_B_M.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMULARIOS\FRM_FORMAS_DE_PAGO_BUSCAR_B_M.resx">
+      <DependentUpon>FRM_FORMAS_DE_PAGO_BUSCAR_B_M.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMULARIOS\FRM_GESTION_USUARIOS_B.resx">
+      <DependentUpon>FRM_GESTION_USUARIOS_B.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMULARIOS\FRM_GESTION_USUSARIOS.resx">
+      <DependentUpon>FRM_GESTION_USUSARIOS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMULARIOS\FRM_INGRESO.resx">
+      <DependentUpon>FRM_INGRESO.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMULARIOS\FRM_MENU.resx">
+      <DependentUpon>FRM_MENU.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMULARIOS\FRM_OBTENER_CADENA.resx">
+      <DependentUpon>FRM_OBTENER_CADENA.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMULARIOS\FRM_PRODUCTOS_BUSCAR_B_M.resx">
+      <DependentUpon>FRM_PRODUCTOS_BUSCAR_B_M.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMULARIOS\FRM_PROVEEDORES_BUSCAR_B_M.resx">
+      <DependentUpon>FRM_PROVEEDORES_BUSCAR_B_M.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMULARIOS\FRM_TIPOS_PRODUCTOS.resx">
+      <DependentUpon>FRM_TIPOS_PRODUCTOS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMULARIOS\FRM_FORMAS_DE_PAGO.resx">
+      <DependentUpon>FRM_FORMAS_DE_PAGO.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMULARIOS\FRM_CLIENTES_A_M.resx">
+      <DependentUpon>FRM_CLIENTES_A_M.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMULARIOS\FRM_DEPOSITOS.resx">
+      <DependentUpon>FRM_DEPOSITOS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMULARIOS\FRM_PRODUCTOS.resx">
+      <DependentUpon>FRM_PRODUCTOS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMULARIOS\FRM_PROVEEDORES.resx">
+      <DependentUpon>FRM_PROVEEDORES.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMULARIOS\FRM_SERVICIOS.resx">
+      <DependentUpon>FRM_SERVICIOS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMULARIOS\FRM_TIPOS_PRODUCTOS_BUSCAR_B_M.resx">
+      <DependentUpon>FRM_TIPOS_PRODUCTOS_BUSCAR_B_M.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMULARIOS\FRM_VENTAS.resx">
+      <DependentUpon>FRM_VENTAS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMULARIOS\FRM_VENTAS_BUSCAR_M_B.resx">
+      <DependentUpon>FRM_VENTAS_BUSCAR_M_B.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Installer1.resx">
+      <DependentUpon>Installer1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DATOS\DC_Administracion.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DC_Administracion.designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="DATOS\DC_Administracion_Reportes.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DC_Administracion_Reportes.designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
