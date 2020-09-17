@@ -1,3 +1,5 @@
 Breve descripción: 
 
+Creado en el año 2018, basado en linq, sql server y crystal reports.
 
+Sistema de stock, ventas y facturacion.
